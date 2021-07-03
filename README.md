@@ -7,6 +7,7 @@ For the Analysis Report and Insights see the following:
 1. Edu_Tech_Insights.ipynb : The report describes my queries and spark SQL to answer business questions that I selected. It describes my assumptions, thinking, what the parts of the pipeline do, what is given, what I set up. It also provides a discussion about the data, any data issues and ways to resolve these issues.
 
 
+
 Under the skh folder you will find:
 
 a) docker-compose.yml : Used to spin up the pipeline
