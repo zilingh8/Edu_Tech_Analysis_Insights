@@ -1,0 +1,500 @@
+    1  asasbq query --use_legacy_sql=false 'SELECT EXTRACT( HOUR FROM TIMESTAMP('2018-07-09T02:40:23.652Z')) '
+    2  bq query --use_legacy_sql=false 'WITH table AS (
+    3    SELECT TIMESTAMP("2018-07-09T02:40:23.652Z") time
+    4    )
+    5  SELECT
+    6    EXTRACT(DAY FROM time) as day,
+    7    EXTRACT(MONTH FROM time) as month,
+    8    EXTRACT(YEAR FROM time) as year,
+    9    EXTRACT(HOUR FROM time) AS hour,
+   10    EXTRACT(MINUTE FROM time) as minute,
+   11    EXTRACT(SECOND from time) as second
+   12  FROM
+   13    table'
+   14  bq query --use_legacy_sql=false 'WITH table AS (
+   15    SELECT TIMESTAMP(start_date) time
+   16    )
+   17  SELECT
+   18    EXTRACT(DAY FROM time) as day,
+   19    EXTRACT(MONTH FROM time) as month,
+   20    EXTRACT(YEAR FROM time) as year,
+   21    EXTRACT(HOUR FROM time) AS hour,
+   22    EXTRACT(MINUTE FROM time) as minute,
+   23    EXTRACT(SECOND from time) as second
+   24  FROM
+   25    table 
+   26   FROM `bigquery-public-data.san_francisco.bikeshare_trips`'
+   27  bq query --use_legacy_sql=false 'WITH table AS (
+   28    SELECT TIMESTAMP(start_date) time
+   29    )
+   30  SELECT
+   31    EXTRACT(DAY FROM time) as day,
+   32    EXTRACT(MONTH FROM time) as month,
+   33    EXTRACT(YEAR FROM time) as year,
+   34    EXTRACT(HOUR FROM time) AS hour,
+   35    EXTRACT(MINUTE FROM time) as minute,
+   36    EXTRACT(SECOND from time) as second
+   37  FROM
+   38    table 
+   39  FROM `bigquery-public-data.san_francisco.bikeshare_trips`'
+   40  bq query --use_legacy_sql=false 'WITH table AS (
+   41    SELECT TIMESTAMP(start_date FROM `bigquery-public-data.san_francisco.bikeshare_trips`) time
+   42    )
+   43  SELECT
+   44    EXTRACT(DAY FROM time) as day,
+   45    EXTRACT(MONTH FROM time) as month,
+   46    EXTRACT(YEAR FROM time) as year,
+   47    EXTRACT(HOUR FROM time) AS hour,
+   48    EXTRACT(MINUTE FROM time) as minute,
+   49    EXTRACT(SECOND from time) as second
+   50  FROM
+   51    table'
+   52  bq query --use_legacy_sql=false 'WITH table AS (
+   53    SELECT TIMESTAMP(start_date) FROM `bigquery-public-data.san_francisco.bikeshare_trips`
+   54    )
+   55  SELECT
+   56    EXTRACT(DAY FROM time) as day,
+   57    EXTRACT(MONTH FROM time) as month,
+   58    EXTRACT(YEAR FROM time) as year,
+   59    EXTRACT(HOUR FROM time) AS hour,
+   60    EXTRACT(MINUTE FROM time) as minute,
+   61    EXTRACT(SECOND from time) as second
+   62  FROM
+   63    table'
+   64  bq query --use_legacy_sql=false 'WITH table AS (
+   65    SELECT TIMESTAMP(start_date) time 
+   66    ) FROM `bigquery-public-data.san_francisco.bikeshare_trips`
+   67  SELECT
+   68    EXTRACT(DAY FROM time) as day,
+   69    EXTRACT(MONTH FROM time) as month,
+   70    EXTRACT(YEAR FROM time) as year,
+   71    EXTRACT(HOUR FROM time) AS hour,
+   72    EXTRACT(MINUTE FROM time) as minute,
+   73    EXTRACT(SECOND from time) as second
+   74  FROM
+   75    table'
+   76  bq query --use_legacy_sql=false 'WITH table AS (
+   77    SELECT TIMESTAMP(start_date) time FROM `bigquery-public-data.san_francisco.bikeshare_trips`
+   78    ) 
+   79  SELECT
+   80    EXTRACT(DAY FROM time) as day,
+   81    EXTRACT(MONTH FROM time) as month,
+   82    EXTRACT(YEAR FROM time) as year,
+   83    EXTRACT(HOUR FROM time) AS hour,
+   84    EXTRACT(MINUTE FROM time) as minute,
+   85    EXTRACT(SECOND from time) as second
+   86  FROM
+   87    table'
+   88  bq query --use_legacy_sql=false 'WITH table AS (SELECT TIMESTAMP(“2018-07-09T02:40:23.652Z”) time)
+   89  SELECT
+   90    EXTRACT(DAY FROM time) as day,
+   91    EXTRACT(MONTH FROM time) as month,
+   92    EXTRACT(YEAR FROM time) as year,
+   93    EXTRACT(HOUR FROM time) AS hour,
+   94    EXTRACT(MINUTE FROM time) as minute,
+   95    EXTRACT(SECOND from time) as second
+   96  FROM table'
+   97  bq query --use_legacy_sql=false 'WITH table AS (
+   98    SELECT TIMESTAMP("start_date") time
+   99    ) FROM `bigquery-public-data.san_francisco.bikeshare_trips`'
+  100  bq query --use_legacy_sql=false 'WITH table AS (SELECT TIMESTAMP("2018-07-09T02:40:23.652Z") time)' 
+  101  bq query --use_legacy_sql=false 'WITH table AS (SELECT TIMESTAMP("2018-07-09T02:40:23.652Z") time)'
+  102  bq query --use_legacy_sql=false 'WITH table AS (
+  103    SELECT TIMESTAMP("2018-07-09T02:40:23.652Z") time
+  104    )' 
+  105  bq query --use_legacy_sql=false 'WITH table AS (
+  106    SELECT TIMESTAMP("2018-07-09T02:40:23.652Z") time
+  107    )" 
+  108  '
+  109  bq query --use_legacy_sql=false 'SELECT table AS (
+  110    SELECT TIMESTAMP("2018-07-09T02:40:23.652Z") time
+  111    )'
+  112  bq query --use_legacy_sql=false 'SELECT EXTRACT(HOUR FROM TIME(DATETIME(start_date))) AS starthour FROM `bigquery-public-data.san_francisco.bikeshare_trips`'
+  113  bq query --use_legacy_sql=false 'SELECT EXTRACT(HOUR FROM TIME"DATETIME(start_date)") AS starthour FROM `bigquery-public-data.san_francisco.bikeshare_trips`'
+  114  bq query --use_legacy_sql=false 'SELECT TIME(DATETIME(start_date)) AS starthour FROM `bigquery-public-data.san_francisco.bikeshare_trips`'
+  115  bq query --use_legacy_sql=false 'SELECT HOUR(TIME(DATETIME(start_date))) AS starthour FROM `bigquery-public-data.san_francisco.bikeshare_trips`'
+  116  bq query --use_legacy_sql=false 'SELECT DATEPART(HOUR,TIME(DATETIME(start_date))) AS starthour FROM `bigquery-public-data.san_francisco.bikeshare_trips`'
+  117  bq query --use_legacy_sql=false 'SELECT EXTRACT(HOUR FROM TIMESTAMP(start_date)) AS starthour FROM `bigquery-public-data.san_francisco.bikeshare_trips`'
+  118  bq query --use_legacy_sql=false 'SELECT EXTRACT(HOUR FROM TIMESTAMP(DATETIME(start_date))) AS starthour FROM `bigquery-public-data.san_francisco.bikeshare_trips`'
+  119  bq query --use_legacy_sql=false 'SELECT EXTRACT(MINUTE FROM TIMESTAMP(DATETIME(start_date))) AS starthour FROM `bigquery-public-data.san_francisco.bikeshare_trips`'
+  120  bq query --use_legacy_sql=false 'SELECT EXTRACT(HOUR FROM start_date) AS starthour FROM `bigquery-public-data.san_francisco.bikeshare_trips`'
+  121  bq query --use_legacy_sql=false 'SELECT EXTRACT(HOUR FROM (TIMESTAMP(start_date), "America/Los_Angeles")) AS starthour FROM `bigquery-public-data.san_francisco.bikeshare_trips`'
+  122  bq query --use_legacy_sql=false 'SELECT EXTRACT(HOUR FROM TIMESTAMP((start_date), "America/San_Francisco")) AS starthour FROM `bigquery-public-data.san_francisco.bikeshare_trips`'
+  123  bq query --use_legacy_sql=false 'SELECT EXTRACT(HOUR FROM TIMESTAMP((start_date), "America/Los_Angeles")) AS starthour FROM `bigquery-public-data.san_francisco.bikeshare_trips`'
+  124  bq query --use_legacy_sql=false 'SELECT EXTRACT(HOUR FROM TIMESTAMP(start_date)) AS starthour FROM `bigquery-public-data.san_francisco.bikeshare_trips`'
+  125  bq query --use_legacy_sql=false 'SELECT EXTRACT(HOUR FROM (TIMESTAMP(start_date)) AT TIME ZONE "America/San_Francisco") AS starthour FROM `bigquery-public-data.san_francisco.bikeshare_trips`'
+  126  bq query --use_legacy_sql=false 'SELECT EXTRACT(HOUR FROM (TIMESTAMP(start_date)) AT TIME ZONE "America/San_Francisco") AS starthour FROM `bigquery-public-data.san_francisco.bikeshare_trips`'
+  127  bq query --use_legacy_sql=false 'SELECT EXTRACT(HOUR FROM (TIMESTAMP(DATETIME(start_date))) AT TIME ZONE "America/San_Francisco") AS starthour FROM `bigquery-public-data.san_francisco.bikeshare_trips`'
+  128  bq query --use_legacy_sql=false 'SELECT EXTRACT(HOUR FROM TIMESTAMP(DATETIME(start_date))) AS starthour FROM `bigquery-public-data.san_francisco.bikeshare_trips`'
+  129  bq query --use_legacy_sql=false 'SELECT EXTRACT(HOUR FROM PARSE_TIMESTAMP('%Y-%m-%d %H:%M:%S',start_date)) as starthour FROM `bigquery-public-data.san_francisco.bikeshare_trips`'
+  130  bq query --use_legacy_sql=false 'SELECT EXTRACT(HOUR FROM TIME(DATETIME2(start_date))) AS starthour FROM `bigquery-public-data.san_francisco.bikeshare_trips`'
+  131  bq query --use_legacy_sql=false 'SELECT EXTRACT(HOUR FROM TIME(DATETIME(TRIM(TRAILING(' UTC') FROM start_date))) AS starthour FROM `bigquery-public-data.san_francisco.bikeshare_trips`'
+  132  bq query --use_legacy_sql=false 'SELECT TRIM(TRAILING(' UTC') FROM start_date) AS starthour FROM `bigquery-public-data.san_francisco.bikeshare_trips`'
+  133  bq query --use_legacy_sql=false 'SELECT start_date, EXTRACT(HOUR from start_date) as start_hour, EXTRACT(MINUTE FROM start_date) as start_minutes FROM `bigquery-public-data.san_francisco.bikeshare_trips`'
+  134  bq query --use_legacy_sql=false 'SELECT EXTRACT(HOUR from start_date) as start_hourFROM `bigquery-public-data.san_francisco.bikeshare_trips`'
+  135  bq query --use_legacy_sql=false 'SELECT start_date, EXTRACT(HOUR from start_date) as start_hourFROM `bigquery-public-data.san_francisco.bikeshare_trips`'
+  136  bq query --use_legacy_sql=false 'SELECT start_date, EXTRACT(HOUR from start_date) as start_hour FROM `bigquery-public-data.san_francisco.bikeshare_trips`'
+  137  bq query --use_legacy_sql=false 'SELECT start_date, EXTRACT(HOUR from start_date) as start_hour, FROM `bigquery-public-data.san_francisco.bikeshare_trips`'
+  138  bq query --use_legacy_sql=false 'SELECT start_date, EXTRACT(HOUR from start_date) as start_hour, EXTRACT(MINUTE FROM start_date) as start_minutes FROM `bigquery-public-data.san_francisco.bikeshare_trips`'
+  139  bq query --use_legacy_sql=false 'SELECT start_date minutes FROM `bigquery-public-data.san_francisco.bikeshare_trips`'
+  140  bq query --use_legacy_sql=false 'SELECT start_date, EXTRACT(HOUR from start_date) as start_hour, EXTRACT(MINUTE FROM start_date) as start_minutes, CASE WHEN start_hour BETWEEN 12 and 17 THEN 1 ELSE 0 END AS Afternoon_Trip FROM `bigquery-public-data.san_francisco.bikeshare_trips`'
+  141  bq query --use_legacy_sql=false 'SELECT YEAR(start_date) FROM `bigquery-public-data.san_francisco.bikeshare_trips`'
+  142  bq query --use_legacy_sql=false 'SELECT EXTRACT(Year from start_date) FROM `bigquery-public-data.san_francisco.bikeshare_trips`'
+  143  bq query --use_legacy_sql=false 'SELECT EXTRACT(Year from start_date) as Year, CASE WHEN Year>2016 THEN 'AFTERNOON' ELSE 'MORNING' END AS TD FROM `bigquery-public-data.san_francisco.bikeshare_trips`'
+  144  bq query --use_legacy_sql=false 'WITH subtable AS (SELECT EXTRACT(Year from start_date) as Year), CASE WHEN Year FROM subtable >2016 THEN 'AFTERNOON' ELSE 'MORNING' END AS TD FROM `bigquery-public-data.san_francisco.bikeshare_trips`'
+  145  bq query --use_legacy_sql=false 'WITH subtable AS (SELECT EXTRACT(Year from start_date) as Year) FROM `bigquery-public-data.san_francisco.bikeshare_trips`, SELECT * FROM subtable'
+  146  bq query --use_legacy_sql=false ‘SELECT CAST(start_date AS TIME) FROM `bigquery-public-data.san_francisco.bikeshare_trips`'
+  147  bq query --use_legacy_sql=false 'SELECT CAST(start_date AS TIME) FROM `bigquery-public-data.san_francisco.bikeshare_trips`'
+  148  bq query --use_legacy_sql=false 'SELECT COUNT(start_date) FROM `bigquery-public-data.san_francisco.bikeshare_trips` WHERE (CAST(start_date AS TIME) between "5:00:00" and "11:00:00")'
+  149  bq query --use_legacy_sql=false 'SELECT start_date, end_date, duration  FROM `bigquery-public-data.san_francisco.bikeshare_trips` '
+  150  bq query --use_legacy_sql=false 'SELECT duration_sec FROM `bigquery-public-data.san_francisco.bikeshare_trips` WHERE duration_sec>43200'
+  151  bq query --use_legacy_sql=false 'SELECT duration_sec FROM `bigquery-public-data.san_francisco.bikeshare_trips` WHERE duration_sec<0'
+  152  bq query --use_legacy_sql=false 'SELECT duration_sec FROM `bigquery-public-data.san_francisco.bikeshare_trips` WHERE duration_sec<10'
+  153  bq query --use_legacy_sql=false 'SELECT duration_sec FROM `bigquery-public-data.san_francisco.bikeshare_trips` WHERE duration_sec<30'
+  154  bq query --use_legacy_sql=false 'SELECT COUNT(start_date) FROM `bigquery-public-data.san_francisco.bikeshare_trips` WHERE (CAST(start_date AS TIME) between “00:00:00” and “11:59:00”)'
+  155  bq query --use_legacy_sql=false 'SELECT COUNT(start_date) FROM `bigquery-public-data.san_francisco.bikeshare_trips` WHERE (CAST(start_date AS TIME) between "00:00:00" and "11:59:00")'
+  156  bq query --use_legacy_sql=false 'SELECT COUNT(start_date) FROM `bigquery-public-data.san_francisco.bikeshare_trips` WHERE (CAST(start_date AS TIME) between "12:00:00" and "18:00")'
+  157  bq query --use_legacy_sql=false 'SELECT COUNT(start_date) FROM `bigquery-public-data.san_francisco.bikeshare_trips` WHERE (CAST(start_date AS TIME) between "12:00:00" and "18:00:00")'
+  158  bq query --use_legacy_sql=false 'SELECT EXTRACT(HOUR_SECOND FROM start_date) as StartHour FROM `bigquery-public-data.san_francisco.bikeshare_trips`'
+  159  bq query --use_legacy_sql=false 'SELECT(start_date) AS StartHour FROM `bigquery-public-data.san_francisco.bikeshare_trips`'’
+  160  bq query --use_legacy_sql=false 'SELECT(start_date) as hour FROM `bigquery-public-data.san_francisco.bikeshare_trips`'
+  161  bq query --use_legacy_sql=false 'SELECT EXTRACT(HOUR_SECOND FROM start_date) as hour FROM `bigquery-public-data.san_francisco.bikeshare_trips`'
+  162  bq query --use_legacy_sql=false ‘SELECT EXTRACT(MONTH FROM CAST(start_date AS date)) AS Month FROM `bigquery-public-data.san_francisco.bikeshare_trips`'
+  163  bq query --use_legacy_sql=false 'SELECT EXTRACT(MONTH FROM CAST(start_date AS date)) AS Month FROM `bigquery-public-data.san_francisco.bikeshare_trips`'
+  164  bq query --use_legacy_sql=false 'SELECT EXTRACT(HOUR_SECOND FROM CAST(start_date AS date)) AS StartHour FROM `bigquery-public-data.san_francisco.bikeshare_trips`'
+  165  bq query --use_legacy_sql=false 'SELECT EXTRACT(HOUR FROM CAST(start_date AS date)) AS StartHour FROM `bigquery-public-data.san_francisco.bikeshare_trips`'
+  166  bq query --use_legacy_sql=false 'SELECT TIME(DATETIME "start_date") AS starttime FROM `bigquery-public-data.san_francisco.bikeshare_trips`'
+  167  bq query --use_legacy_sql=false 'SELECT TIME(DATETIME(start_date)) AS starttime  FROM `bigquery-public-data.san_francisco.bikeshare_trips`'
+  168  bq query --use_legacy_sql=false 'SELECT EXTRACT(HOUR FROM TIME(DATETIME(start_date))) AS starthour 
+  169  CASE WHEN starthour BETWEEN 12 and 17 THEN 1 ELSE 0 END AS Afternoon FROM `bigquery-public-data.san_francisco.bikeshare_trips`'
+  170  bq query --use_legacy_sql=false 'SELECT EXTRACT(HOUR FROM TIME(DATETIME(start_date))) AS starthour; CASE WHEN starthour BETWEEN 12 and 17 THEN 1 ELSE 0 END AS Afternoon FROM `bigquery-public-data.san_francisco.bikeshare_trips`'
+  171  bq query --use_legacy_sql=false 'SELECT EXTRACT(HOUR FROM TIME(DATETIME(start_date))) AS starthour FROM `bigquery-public-data.san_francisco.bikeshare_trips`'
+  172  bq query --use_legacy_sql=false 'SELECT EXTRACT(HOUR FROM TIME(DATETIME(start_date))) AS starthour FROM `bigquery-public-data.san_francisco.bikeshare_trips`'
+  173  bq query --use_legacy_sql=false 'SELECT start_date FROM `bigquery-public-data.san_francisco.bikeshare_trips`'
+  174  bq query --use_legacy_sql=false 'SELECT HOUR(start_date) AS starthour FROM `bigquery-public-data.san_francisco.bikeshare_trips`'
+  175  bq query --use_legacy_sql=false 'SELECT HOUR(start_date) FROM `bigquery-public-data.san_francisco.bikeshare_trips`'
+  176  bq query --use_legacy_sql=false 'SELECT HOUR(DATETIME(start_date)) FROM `bigquery-public-data.san_francisco.bikeshare_trips`'
+  177  SELECT HOUR("2017-06-20 09:34:00")
+  178  bq query --use_legacy_sql=false 'SELECT EXTRACT(HOUR_SECOND FROM "2013-08-29 09:08:00")'
+  179  bq query --use_legacy_sql=false 'DATEPART(hour,start_date) AS starthour FROM `bigquery-public-data.san_francisco.bikeshare_trips`'
+  180  bq query --use_legacy_sql=false 'SELECT DATEPART(hour,start_date) AS starthour FROM `bigquery-public-data.san_francisco.bikeshare_trips`'
+  181  bq query --use_legacy_sql=false 'SELECT DATEPART(hour, ’2016-08-31 23:48:00’) AS starthour FROM `bigquery-public-data.san_francisco.bikeshare_trips`'bq query --use_legacy_sql=false 'SELECT DATEPART(hour, ’2016-08-31 23:48:00’) AS starthour 
+  182  bq query --use_legacy_sql=false 'SELECT DATEPART(hour, ’2016-08-31 23:48:00’) AS starthour 
+  183  bq query --use_legacy_sql=false 'SELECT DATEPART(hour, '2016-08-31 23:48:00') AS starthour'
+  184  bq query --use_legacy_sql=false 'SELECT EXTRACT(YEAR FROM CURRENT_DATE)' 
+  185  bq query --use_legacy_sql=false 'SELECT EXTRACT(HOUR_SECOND FROM CURRENT_DATE)' 
+  186  bq query --use_legacy_sql=false 'SELECT EXTRACT(HOUR FROM CURRENT_DATE)' 
+  187  bq query --use_legacy_sql=false 'SELECT EXTRACT(HOUR FROM TIME(DATETIME(start_date))) AS starthour FROM `bigquery-public-data.san_francisco.bikeshare_trips`'
+  188  bq query --use_legacy_sql=false 'SELECT EXTRACT(HOUR, TIME(DATETIME(start_date))) AS starthour FROM `bigquery-public-data.san_francisco.bikeshare_trips`'
+  189  bq query --use_legacy_sql=false 'SELECT CAST(start_date AS TIME) AS starthour FROM `bigquery-public-data.san_francisco.bikeshare_trips`'
+  190  bq query --use_legacy_sql=false 'SELECT HOUR(CAST(start_date AS TIME)) AS starthour FROM `bigquery-public-data.san_francisco.bikeshare_trips`'
+  191  bq query --use_legacy_sql=false 'SELECT EXTRACT(HOUR FROM (CAST(start_date AS TIME))) AS starthour FROM `bigquery-public-data.san_francisco.bikeshare_trips`'
+  192  bq query --use_legacy_sql=false 'SELECT value FROM (CAST(start_date AS TIME))) AS starthour FROM `bigquery-public-data.san_francisco.bikeshare_trips`'
+  193  bq query --use_legacy_sql=false 'SELECT value FROM start_date FROM `bigquery-public-data.san_francisco.bikeshare_trips`'
+  194  bq query --use_legacy_sql=false 'SELECT DATETIME(TIMESTAMP start_date, "America/San Francisco") as datetime FROM `bigquery-public-data.san_francisco.bikeshare_trips`'
+  195  bq query --use_legacy_sql=false 'SELECT EXTRACT(HOUR FROM start_date)
+  196  as starthour FROM `bigquery-public-data.san_francisco.bikeshare_trips`'
+  197  bq query --use_legacy_sql=false 'SELECT EXTRACT(HOUR FROM TIMESTAMP(start_date)) as starthour FROM `bigquery-public-data.san_francisco.bikeshare_trips`'
+  198  bq query --use_legacy_sql=false 'SELECT EXTRACT(HOUR FROM TIMESTAMP('2018-07-09T02:40:23.652Z')) as starthour '
+  199  pwd
+  200  cd w205
+  201  cd project1-zilingh8
+  202  cd project-1-zilingh8
+  203  git add proj1_part3.ipynb
+  204  git add proj1_part1_and_part2.md
+  205  git status
+  206  git commit -m "submission_final" proj1_part3.ipynb
+  207  git commit -m "submission_final" proj1_part1_and_part2.md
+  208  git status
+  209  git push origin homework
+  210  git add README.md
+  211  git commit -m "submission_final" README.md
+  212  git push origin homework
+  213  git add proj1_part1_and_part2.md
+  214  git commit -m "submission_final2" proj1_part1_and_part2.md
+  215  git push origin homework
+  216  pwd
+  217  cd w205
+  218  ls
+  219  cd project-1-zilingh8
+  220  git add README.md
+  221  git add proj1_part3.ipynb
+  222  git add bart2.csv
+  223  git add proj1_part1_and_part2.md
+  224  git commit -m "submission"
+  225  vim README.md
+  226  git status
+  227  git commit -m "submission" README.md
+  228  git commit -m "submission" proj1_part3.ipynb
+  229  git commit -m "submission" bart2.csv
+  230  git commit -m "submission" proj1_part1_and_part2.md
+  231  git status
+  232  git push origin homework
+  233  pwd
+  234  curl -L -o assessment-attempts-20180128-121051-nested.json https://goo.gl/ME6hjp
+  235  pwd
+  236  cd w205
+  237  pwd
+  238  git clone https://github.com/mids-w205-schioberg/project-2-zilingh8
+  239  ls
+  240  cd project-2-zilingh8
+  241  git branch homework
+  242  git checkout homework
+  243  pwd
+  244  curl -L -o annot_fpid.json https://goo.gl/qWiu7d
+  245  ls
+  246  cd w205
+  247  ls -lh annot_fpid.json
+  248  cat annot_fpid.json | jq .
+  249  cat annot_fpid.json | jq '.[][]'
+  250  cat annot_fpid.json | jq '.[][]' -r
+  251  cat annot_fpid.json | jq '.[][]' -r | sort | uniq
+  252  cat annot_fpid.json | jq '.[][]' -r | sort | uniq -c
+  253  cd w205
+  254  docker run
+  255  docker run --rm -v ~/w205:/w205 midsw205/base bash
+  256  docker run --help
+  257  docker run -it --rm -v ~/w205:/w205 midsw205/base bash
+  258  cd w205
+  259  cd project-2-zilingh8
+  260  curl -L -o assessment-attempts-20180128-121051-nested.json https://goo.gl/ME6hjp
+  261  cat assessment-attempts-20180128-121051-nested.json | jq '.[][]' -r | sort | uniq
+  262  cat assessment-attempts-20180128-121051-nested.json | jq '.[][][][][][][]' -r | sort | uniq -c
+  263  cat assessment-attempts-20180128-121051-nested.json | jq '.[][][][][][]' -r | sort | uniq -c
+  264  cat assessment-attempts-20180128-121051-nested.json | jq '.[][][][][][]'  | sort | uniq -c
+  265  cat assessment-attempts-20180128-121051-nested.json | jq '.[][][][][]'  | sort | uniq -c
+  266  cat assessment-attempts-20180128-121051-nested.json | jq '.[][][][]'  | sort | uniq -c
+  267  cat assessment-attempts-20180128-121051-nested.json | jq '.[][][]'  | sort | uniq -c
+  268  cat assessment-attempts-20180128-121051-nested.json | jq '.[][]'  | sort | uniq -c
+  269  bq
+  270  bq --help
+  271  cd w 205
+  272  cd w205
+  273  cd w205 
+  274  cd project-2-zilingh8
+  275  ls -lh assessment-attempts-20180128-121051-nested.json
+  276  cat assessment-attempts-20180128-121051-nested.json | jq .
+  277  cat assessment-attempts-20180128-121051-nested.json | jq '.[][]'
+  278  cat assessment-attempts-20180128-121051-nested.json | jq '.[][]' | less
+  279  cd w205
+  280  docker run redis
+  281  docker ps
+  282  docker run -d redis
+  283  docker ps
+  284  docker kill competent_burnell
+  285  docker rm competent_burnell
+  286  docker rm flamboyant_chebyshev
+  287  docker kill flamboyant_chebyshev
+  288  docker rm flamboyant_chebyshev
+  289  docker ps
+  290  docker run -d --name redis -p 6379:6379
+  291  docker run redis
+  292  docker run -d --name redis -p 6397:6379 redis
+  293  docker ps
+  294  docker run -d --name redis -p 6397:6379 redis
+  295  docker ps
+  296  docker kill redis
+  297  docker rm redis
+  298  cd w205
+  299  curl -L -o lp_data.csv https://goo.gl/FDFPYB
+  300  curl -L -o annot_fpid.json https://goo.gl/qWiu7d
+  301  man curl
+  302  q
+  303  /q
+  304  q
+  305  wc -l lp_data.csv
+  306  cat lp_data.csv
+  307  cd w205
+  308  ls
+  309  cd project-2-zilingh8
+  310  curl -L -o assessment-attempts-20180128-121051-nested.json https://goo.gl/ME6hjp
+  311  ls
+  312  head assessment-attempts-20180128-121051-nested.json
+  313  wc -l assessment-attempts-20180128-121051-nested.json
+  314  ls lh assessment-attempts-20180128-121051-nested.json
+  315  ls -lh assessment-attempts-20180128-121051-nested.json
+  316  pwd
+  317  docker run -d -p 80:80 docker/getting-started
+  318  docker images
+  319  docker ps
+  320  docker ps -a
+  321  docker rm hungry_chatelet
+  322  docker rm hungry_chatelet
+  323  docker stop hungry_chatelet
+  324  docker rm hungry_chatelet
+  325  docker ps -a
+  326  cd w205
+  327  ls
+  328  cd course-content
+  329  git pull --all
+  330  cd ../
+  331  sudo apt update
+  332  sudo apt install docker-compose
+  333  mkdir ~/w205/redis-standalone
+  334  cd ~/w205/redis-standalone
+  335  cp ../course-content/05-Storing-Data-II/example-0-docker-compose.yml docker-compose.yml
+  336  ls
+  337  vim docker-compose.yml
+  338  docker-compose up -d
+  339  docker-compose logs redis
+  340  cd w205
+  341  man curl
+  342  man less
+  343  head lp_data.csv
+  344  cat lp_data.csv | wc -l
+  345  ls -lh annot_fpid.json
+  346  docker ps
+  347  pip install redis
+  348  pwd
+  349  ls
+  350  cd w205
+  351  ls
+  352  cd redis-standalone
+  353  docker-compose ps
+  354  ipython
+  355  docker-compose down
+  356  docker-compose down
+  357  docker-compose ps
+  358  cd w205
+  359  cd kafka
+  360  docker-compose ps
+  361  docker-compose exec mids bash -c "cat /w205/kafka/github-example-large.json | jq '.[]' -c"
+  362  docker-compose exec mids bash -c "cat /w205/kafka/githun-example-large.json |jq '.[]' -c | kafkacat -P -b kafka:29092 -t foo && echo 'Produced 100 messaves.'"
+  363  docker-compose exec mids bash -c "cat /w205/kafka/github-example-large.json |jq '.[]' -c | kafkacat -P -b kafka:29092 -t foo && echo 'Produced 100 messaves.'"
+  364  docker-compose exec mids bash -c "cat /w205/kafka/github-example-large.json |jq '.[]' -c | kafkacat -P -b kafka:29092 -t foo && echo 'Produced 100 messages.'"
+  365  docker-compose exec mids bash -c "kafkacat -C -b kafka:29092 -t foo -o beginning -e"
+  366  docker-compose down
+  367  docker-compose ps
+  368  docker ps
+  369  cd w205
+  370  mkdir kafka
+  371  cd kafka
+  372  cp ../course-content/06-Transforming-Data/docker-compose.yml .
+  373  ls
+  374  vim docker-compose.yml
+  375  docker-compose up -d
+  376  docker-compose ps
+  377  docker-compose logs
+  378  docker-compose logs | grep -i started
+  379  docker-compose exec kafka kafka-topics
+  380  docker-compose exec kafka kafka-topics -- create -- topic foo -- partitions 1 --replication-factor 1 --if-not-exists --zookeeper zookeeper:32181
+  381  docker-compose exec kafka kafka-topics --create --topic foo --partitions 1 --replication-factor 1 --if-not-exists --zookeeper zookeeper:32181
+  382  docker-compose exec kafka kafka-topics --describe --topic foo --zookeeper zookeeper:32181
+  383  docker-compose exerc kafka bash -c "seq 42 | kafka-console-producer --reuqest-required-acks 1 --broker-list localhost1:29092 --topics foo && echo "Produced 42 messages"
+  384  q
+  385  :wq
+  386  cd ../
+  387  "
+  388  docker-compose exerc kafka bash -c "seq 42 | kafka-console-producer --reuqest-required-acks 1 --broker-list localhost1:29092 --topics foo && echo 'Produced 42 messages'"
+  389  docker-compose exec kafka bash -c "seq 42 | kafka-console-producer --reuqest-required-acks 1 --broker-list localhost1:29092 --topics foo && echo 'Produced 42 messages'"
+  390  docker-compose exec kafka bash -c "seq 42 | kafka-console-producer --request-required-acks 1 --broker-list localhost1:29092 --topics foo && echo 'Produced 42 messages'"
+  391  docker-compose exec kafka bash -c "seq 42 | kafka-console-producer --request-required-acks 1 --broker-list localhost1:29092 --topic foo && echo 'Produced 42 messages'"
+  392  docker-compose exec kafka   bash -c "seq 42 | kafka-console-producer \
+  393      --request-required-acks 1 \
+  394      --broker-list localhost:29092 \
+  395      --topic foo && echo 'Produced 42 messages.'"
+  396  docker-compose exec kafka kafka-console-consumer --bootstrap-server localhost:29092 --topic foo --from beginning-max-messages 42
+  397  docker-compose exec kafka kafka-console-consumer --bootstrap-server localhost:29092 --topic foo --from beginning-max-messages 42
+  398  docker-compose exec kafka kafka-console-consumer --bootstrap-server localhost:29092 --topic foo --from beginning --max-messages 42
+  399  docker-compose exec kafka kafka-console-consumer --bootstrap-server localhost:29092 --topic foo --from-beginning --max-messages 42
+  400  docker-compose down
+  401  curl -L -o github-example-large.json https://goo.gl/Y4MD58
+  402  docker-compose up -d
+  403  docker-compose exec kafka kafka-topics --create --topic foo --partitions 1 --replication-factor 1 --if-not-exists --zookeeper zookeeper:32181
+  404  docker-compose exec kafka kafka-topics --create --topic foo --partitions 1 --replication-factor 1 --if-not-exists --zookeeper zookeeper:32181
+  405  '
+  406  '
+  407  docker-compose exec kafka kafka-topics --describe --topic foo --zookeeper zookeeper:32181
+  408  cat github-example-large.json
+  409   cat github-example-large.json | jq ".[]"
+  410  docker-compose exec mids bash -c “cat /w205/kafka/github-example-large.json
+  411  docker-compose exec mids bash -c "cat /w205/kafka/github-example-large.json
+  412  "
+  413  docker-compose exec mids bash -c “cat /w205/kafka/github-example-large.json” | jq '.[]' -c"
+  414  "
+  415  docker-compose exec mids bash -c “cat /w205/kafka/github-example-large.json” | jq '.[]' -c"
+  416  "
+  417  "'
+  418  "
+  419  docker-compose exec mids bash -c "cat /w205/kafka/github-example-large.json | jq '.[]' -c"
+  420  '
+  421  docker-compose exec mids bash -c "cat /w205/kafka/github-example-large.json | jq '.[]' -c"docker-compose exec mids bash -c "cat /w205/kafka/github-example-large.json | jq '.[]' -c"
+  422  '
+  423  docker-compose exec mids bash -c "cat /w205/kafka/github-example-large.json | jq '.[]' -c"docker-compose exec mids bash -c "cat /w205/kafka/github-example-large.json | jq '.[]' -c"]"
+  424  q
+  425  man cat
+  426  pwd
+  427  cd w205
+  428  docker run -d redis
+  429  docker ps
+  430  docker ps -a
+  431  docker ps
+  432  docker kill relaxed_hellman
+  433  docker ps
+  434  docker rm relaxed_hellman
+  435  docker ps
+  436  docker-compose up -d
+  437  ls
+  438  pwd redis-standalone
+  439  docker-compose up -d
+  440  ls
+  441  cd redis-standalone
+  442  ls
+  443  docker-compose up -d
+  444  docker-compose ps
+  445  docker-compose logs redis
+  446  ipython
+  447  docker-compose down
+  448  docker-compose ps
+  449  cd ../
+  450  mkdir redis-cluster
+  451  cd redis-cluster
+  452  cp ../course-content/05-Storing-Data-II/example-1-docker-compose.yml docker-compose.yml
+  453  ls
+  454  vim docker-compose.yml
+  455  docker-compose up -d
+  456  docker-compose logs redis
+  457  docker-compose exec mids bash
+  458  docker-compose down
+  459  docker ps
+  460  cd ..
+  461  mkdir jupytertest
+  462  cd jupytertest
+  463  cp ../course-content/05-Storing-Data-II/example-2-docker-compose.yml docker-compose.yml
+  464  ls
+  465  vim docker-compose.yml
+  466  docker-compose up-d
+  467  docker-compose up -d
+  468  docker-compose exec mids jupyter notebook --no-browser --port 8888 --ip 0.0.0.0 --allow-root
+  469  docker-compose down
+  470  cd w205
+  471  docker ps
+  472  mkdir kafka
+  473  cd kafka
+  474  cp ../course-content/06-Transforming-Data/docker-compose.yml .
+  475  vim docker-compose.yml
+  476  pwd
+  477  cd w205
+  478  docker ps
+  479  cd kafka
+  480  cp ../course-content/06-Transforming-Data/docker-compose.yml .
+  481  ls
+  482  vim docker-compose.yml
+  483  pwd
+  484  cd ../w205/kafka
+  485  cd w205/kafka
+  486  cp ../course-content/06-Transforming-Data/docker-compose.yml .
+  487  ls
+  488  vim docker-compose.yml
+  489  cd w205
+  490  cd project-2-zilingh8
+  491  cd skh
+  492  docker-compose up -d
+  493  docker-compose exec kafka kafka-topics --create --topic assessments --partitions 1 --replication-factor 1 --if-not-exists --zookeeper zookeeper:32181
+  494  man logs
+  495  man log
+  496  man docker-compose
+  497  docker-compose exec spark pyspark
+  498  docker-compose exec spark cat /root/.python_history
+  499  docker-compose exec spark cat /root/.python_history > spark_history2.txt
+  500  history > zilingh8-history2.txt
