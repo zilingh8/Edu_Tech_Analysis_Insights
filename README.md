@@ -12,7 +12,7 @@ Under the skh folder you will find:
 
 a) docker-compose.yml : Used to spin up the pipeline
 
-b) spark_history.txt and spark_history2.txt : my history files, the former shows 99% of the queries run in the report and history2.txt was primarily used to identify the difference in number of records vs distinct number of user_exam_ids.
+b) spark_history.txt and spark_history2.txt : my history files, the former shows most of the queries run in the report and history2.txt was primarily used to identify the difference in number of records vs distinct number of user_exam_ids.
 
 c) zilingh8-history.txt and zilingh8-history2.txt :  
 - the docker history.txt file shows all actions that were used for the report. 
